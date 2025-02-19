@@ -12,6 +12,7 @@
 
 #include <QtCore/QDate>
 #include <QtCore/QObject>
+#include <QtCore/QTimeZone>
 #include <Snapd/App>
 #include <Snapd/Category>
 #include <Snapd/Channel>

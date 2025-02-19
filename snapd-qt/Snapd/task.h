@@ -12,6 +12,7 @@
 
 #include <QtCore/QDateTime>
 #include <QtCore/QObject>
+#include <QtCore/QTimeZone>
 #include <Snapd/WrappedObject>
 #include <Snapd/task-data.h>
 
