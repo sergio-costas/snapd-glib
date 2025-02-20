@@ -17,7 +17,7 @@ class Q_DECL_EXPORT QSnapdWrappedObject : public QObject {
 
 public:
   explicit QSnapdWrappedObject(void *object, void (*unref_func)(void *),
-                               QObject *parent = 0)
+                               QObject *parent = NULL)
       : QObject(parent), wrapped_object(object), unref_func(unref_func) {}
   ~QSnapdWrappedObject() { unref_func(wrapped_object); }
 
