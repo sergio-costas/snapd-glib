@@ -1379,7 +1379,7 @@ static GVariant *qvariant_to_gvariant(const QVariant &variant) {
   if (variant.isNull())
     return g_variant_new("mv", NULL);
 
-  switch (variant.type()) {
+  switch (variant.typeId()) {
   case QMetaType::Bool:
     return g_variant_new_boolean(variant.value<bool>());
   case QMetaType::Int:
