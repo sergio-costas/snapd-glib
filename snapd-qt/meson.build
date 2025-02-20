@@ -155,7 +155,7 @@ source_private_h = [
   'variant.h',
 ]
 
-moc_files = qt.preprocess (moc_headers: [ source_h, source_private_h ],
+moc_files = qt.compile_moc (headers: [ source_h, source_private_h ],
                             dependencies: [ qt_dep ])
 
 snapd_qt_lib = library (library_name,
