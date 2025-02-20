@@ -80,6 +80,7 @@ source_cpp = [
 ]
 
 source_h = [
+  'Snapd/wrapped-object.h',
   'Snapd/alias.h',
   'Snapd/app.h',
   'Snapd/assertion.h',
@@ -112,7 +113,6 @@ source_h = [
   'Snapd/task.h',
   'Snapd/task-data.h',
   'Snapd/user-information.h',
-  'Snapd/wrapped-object.h',
 ]
 
 source_alias_h = [
