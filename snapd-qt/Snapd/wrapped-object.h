@@ -12,7 +12,6 @@
 
 #include <QtCore/QObject>
 
-public
 class Q_DECL_EXPORT QSnapdWrappedObject : public QObject {
   Q_OBJECT
 
