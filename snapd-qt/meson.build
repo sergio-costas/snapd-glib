@@ -77,6 +77,7 @@ source_cpp = [
   'task.cpp',
   'task-data.cpp',
   'user-information.cpp',
+  'wrapped-object.cpp',
 ]
 
 source_h = [
@@ -163,12 +164,11 @@ snapd_qt_lib = library (library_name,
                         version: '1.0.0',
                         dependencies: [ qt_dep, glib_dep, gio_dep, snapd_glib_dep ],
                         cpp_args: [ '-DQT_NO_SIGNALS_SLOTS_KEYWORDS' ],
-                        install: true,
-                        link_language: 'cpp')
+                        install: true)
 
 snapd_qt_dep = declare_dependency (link_with: snapd_qt_lib,
-                                    dependencies: qt_dep,
-                                    include_directories: include_directories ('.'))
+                                   dependencies: qt_dep,
+                                   include_directories: include_directories ('.'))
 
 install_headers (source_h + source_alias_h,
                   install_dir: install_header_dir)
@@ -207,7 +207,7 @@ install_data (cmake_file, cmake_version_file,
                                     dependencies: qml_dep)
     library (qt_name,
               'qml-plugin.cpp', qml_moc_files,
-              dependencies: [ qml_dep, snapd_qt_dep ],
+              dependencies: [ qml_dep, snapd_qt_dep, qt_dep, glib_dep, gio_dep, snapd_glib_dep],
               build_rpath: qml_dir,
               install: true,
               install_dir: qml_dir)
