@@ -22,7 +22,13 @@
 #include <Snapd/Screenshot>
 #include <Snapd/WrappedObject>
 
-class Q_DECL_EXPORT QSnapdSnap : public QSnapdWrappedObject {
+#if defined(LIBSNAPDQT)
+#define LIBSNAPDQT_EXPORT Q_DECL_EXPORT
+#else
+#define LIBSNAPDQT_EXPORT Q_DECL_IMPORT
+#endif
+
+class LIBSNAPDQT_EXPORT QSnapdSnap : public QSnapdWrappedObject {
   Q_OBJECT
 
   Q_PROPERTY(int appCount READ appCount)
