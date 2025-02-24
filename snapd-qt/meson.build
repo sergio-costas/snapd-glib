@@ -163,7 +163,8 @@ snapd_qt_lib = library (library_name,
                         version: '1.0.0',
                         dependencies: [ qt_dep, glib_dep, gio_dep, snapd_glib_dep ],
                         cpp_args: [ '-DQT_NO_SIGNALS_SLOTS_KEYWORDS' ],
-                        install: true)
+                        install: true,
+                        link_language: 'cpp')
 
 snapd_qt_dep = declare_dependency (link_with: snapd_qt_lib,
                                     dependencies: qt_dep,
