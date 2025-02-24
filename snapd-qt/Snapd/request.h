@@ -17,7 +17,7 @@
 class QSnapdRequestPrivate;
 
 #if defined(LIBSNAPDQT)
-#define LIBSNAPDQT_EXPORT Q_DECL_EXPORT
+#define LIBSNAPDQT_EXPORT __attribute__((visibility("default")))
 #else
 #define LIBSNAPDQT_EXPORT Q_DECL_IMPORT
 #endif
