@@ -72,7 +72,7 @@ static QDateTime convertDateTime(GDateTime *datetime) {
   QTime time(g_date_time_get_hour(datetime), g_date_time_get_minute(datetime),
              g_date_time_get_second(datetime),
              g_date_time_get_microsecond(datetime) / 1000);
-#if QT_VERSION >= 0x060800
+#if QT_VERSION >= 0x060900
   return QDateTime(date, time,
                    QTimeZone(g_date_time_get_utc_offset(datetime) / 1000000));
 #else
